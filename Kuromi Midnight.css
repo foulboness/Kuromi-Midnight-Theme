@@ -1,0 +1,276 @@
+/**
+ * @name Kuromi Midnight
+ * @description A soft, Violet theme.
+ * @version 1.0.0
+ * @author foulboness
+ * @source https://github.com/foulboness
+ * @website https://portfolio-miksha.vercel.app/
+ */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --app-font: "Baloo 2", "Quicksand", sans-serif;
+
+
+    --radius-xs: 10px;
+    --radius-sm: 14px;
+    --radius-md: 18px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+
+    --transition-fast: 0.15s ease;
+    --transition: 0.25s ease;
+
+    --shadow-soft: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.theme-dark {
+    --bg-0: #0b0612;
+    --bg-1: #120a1a;
+    --bg-2: #1a1024;
+    --bg-3: #241436;
+
+    --surface: rgba(18, 10, 26, 0.72);
+    --surface-strong: rgba(26, 16, 36, 0.88);
+
+    --glass-border: rgba(199, 166, 255, 0.16);
+
+    --accent: #b48cff;
+    --accent-soft: rgba(180, 140, 255, 0.22);
+    --accent-glow: 0 0 18px rgba(180, 140, 255, 0.35);
+
+    --text: #f3eaff;
+    --text-muted: #bba6d6;
+
+    --chat-bg: rgba(15, 9, 22, 0.55);
+}
+
+.theme-light {
+    --bg-0: #f7f4ff;
+    --bg-1: #efe9ff;
+    --bg-2: #e6ddff;
+    --bg-3: #ddd2ff;
+
+    --surface: rgba(255, 255, 255, 0.75);
+    --surface-strong: rgba(255, 255, 255, 0.92);
+
+    --glass-border: rgba(120, 90, 180, 0.18);
+
+    --accent: #7c5cff;
+    --accent-soft: rgba(124, 92, 255, 0.12);
+    --accent-glow: 0 0 14px rgba(124, 92, 255, 0.22);
+
+    --text: #1e1630;
+    --text-muted: #5a4b78;
+
+    --chat-bg: rgba(255, 255, 255, 0.6);
+}
+
+#app-mount {
+    font-family: var(--app-font);
+    background: linear-gradient(135deg,
+        var(--bg-0),
+        var(--bg-1),
+        var(--bg-2),
+        var(--bg-3)
+    );
+    background-size: 300% 300%;
+    animation: aurora 18s ease infinite;
+}
+
+@keyframes aurora {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ambient overlay */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at top,
+        rgba(180, 140, 255, 0.10),
+        transparent 60%);
+    opacity: 0.7;
+}
+
+.sidebar_a4d4d9,
+.container__7c1a9,
+.chatContent_f75fb0 {
+    background: var(--surface);
+    
+    border-right: 1px solid var(--glass-border);
+}
+
+.message__ {
+    background: var(--surface-strong);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 10px 14px;
+    margin: 6px 0;
+    transition: var(--transition);
+    box-shadow: var(--shadow-soft);
+}
+
+.message__:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--accent-glow);
+}
+
+.channelTextArea__74017 .themedBackground__74017 {
+    background: var(--surface);
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    
+    transition: var(--transition);
+}
+
+.channelTextArea__74017 .themedBackground__74017:focus-within {
+    border-color: var(--accent);
+    box-shadow: var(--accent-glow);
+}
+
+button {
+    border-radius: 999px ;
+    background: var(--accent-soft);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition);
+    color: var(--text);
+}
+
+button:hover {
+    background: rgba(180, 140, 255, 0.28);
+    transform: translateY(-1px);
+    box-shadow: var(--accent-glow);
+}
+
+.menu,
+.popout,
+.tooltip {
+    background: var(--surface-strong);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    
+}
+
+.user-profile-popout::before,
+.user-profile-modal-v2::before {
+    content: "";
+    display: block;
+    height: 44px;
+    background: linear-gradient(90deg,
+        var(--bg-2),
+        var(--bg-3),
+        var(--bg-1)
+    );
+    box-shadow: var(--accent-glow);
+}
+
+/* avatar polish */
+.user-profile-popout img,
+.user-profile-modal-v2 img {
+    border-radius: 50%;
+    box-shadow: var(--accent-glow);
+    transition: var(--transition);
+}
+
+.user-profile-popout img:hover {
+    transform: scale(1.06);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--accent), var(--accent-soft));
+    border-radius: 999px;
+}
+
+:root {
+    --icon-deep: #b48cff;
+    --icon-deep-soft: rgba(180, 140, 255, 0.65);
+}
+
+.childWrapper__6e9f8 svg path,
+.childWrapper__6e9f8 svg {
+    fill: var(--icon-deep);
+    filter: drop-shadow(0 0 6px rgba(180, 140, 255, 0.35));
+    transition: 0.2s ease;
+}
+
+.childWrapper__6e9f8:hover svg {
+    fill: #d6b8ff !important;
+    transform: scale(1.05);
+}
+
+.icon__6e9f8,
+.wrapper__6e9f8 svg,
+svg[class*="icon"] {
+    color: var(--icon-deep);
+    fill: var(--icon-deep);
+    filter: drop-shadow(0 0 4px rgba(180, 140, 255, 0.25));
+}
+
+/* server icons hover glow */
+.wrapper__6e9f8:hover svg {
+    filter: drop-shadow(0 0 10px rgba(180, 140, 255, 0.55));
+}
+
+[class*="icon"] path,
+[class*="icon"] svg path {
+    fill: var(--icon-deep);
+    color: var(--icon-deep);
+}
+
+.winButton__421ed {
+    background: transparent;
+    color: var(--icon-deep);
+    transition: 0.2s ease;
+}
+
+/* minimize */
+.winButtonMinMax__421ed svg {
+    fill: var(--icon-deep);
+}
+
+/* maximize */
+.winButtonMaximize__421ed svg {
+    fill: var(--icon-deep);
+}
+
+/* close button */
+.winButtonClose__421ed svg {
+    fill: var(--icon-deep);
+}
+
+/* hover states */
+.winButton__421ed:hover {
+    background: rgba(180, 140, 255, 0.12);
+    box-shadow: 0 0 12px rgba(180, 140, 255, 0.35);
+}
+
+/* close hover = stronger glow */
+.winButtonClose__421ed:hover {
+    background: rgba(180, 140, 255, 0.18);
+    box-shadow: 0 0 16px rgba(180, 140, 255, 0.55);
+}
+
+button svg,
+.toolbar__133bf svg,
+.iconWrapper__133bf svg {
+    fill: var(--icon-deep);
+    color: var(--icon-deep);
+}
+
+svg {
+    transition: 0.2s ease;
+}
+
+svg:hover {
+    filter: drop-shadow(0 0 8px rgba(180, 140, 255, 0.4));
+}
